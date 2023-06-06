@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Exemplo de imagem com botões invisíveis</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: rgb(0, 0, 0);
+      }
+      .container {
+        position: relative;
+        width: 1000px;
+        height: 500px; /* Altura igual à altura da imagem */
+        margin: 0 auto;
+      }
+
+      .container img {
+        position: absolute;
+        top: 150%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+        height: 300%;
+        z-index: -1;
+      }
+      .overlay-image {
+        position: absolute;
+        top: 78%;
+        left: 72%;
+        z-index: 9999; /* Valor alto para ficar na frente das outras imagens */
+      }
+      .Galeria {
+        position: absolute;
+        top: 1000px;
+        z-index: 9999;
+      }
+      .Galeria img {
+        width: 400px;
+      }
+
+      .overlay-image img {
+        width: 250px; /* Largura desejada */
+        height: auto; /* Mantém a proporção de aspecto */
+      }
+
+      .video {
+        position: absolute;
+        top: 10%;
+        left: 55%;
+        border-radius: 50px;
+        overflow: hidden;
+      }
+      .som1 audio {
+        position: relative;
+        top: 10px;
+        left: 71%;
+        width: 280px;
+        height: 30px;
+      }
+
+      /* Posições dos botões */
+      #button1 { top: 150px; left: 0px; }
+
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const elemento = document.documentElement;
+
+        elemento.addEventListener("mousemove", trocarCursor);
+        elemento.addEventListener("mouseout", restaurarCursor);
+
+        function trocarCursor() {
+          elemento.style.cursor = "url('img/Polaroid.jpeg'), auto";
+        }
+
+        function restaurarCursor() {
+          elemento.style.cursor = "auto";
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="Galeria">
+      <img src="img/galeria.jpg" alt="Imagem Extra" style="cursor: pointer;">
+    </div>
+    <div class="overlay-image">
+      <div class="button" id="button1" onclick="window.location.href='CENA01.html'">
+        <img src="img/Polaroid.jpeg" alt="Imagem Extra" style="cursor: pointer;">
+      </div>
+    </div>
+    <div class="container">
+      <img src="img/ZOOM/04.1.png" alt="Minha imagem">
+    </div>
+    <div class="video">
+      <video src="img/ZOOM/Personalidades da Feira - Carlo Barbosa-(1080p).mp4" width="640" height="360" controls autoplay></video>
+    </div>
+    <div class="som1">
+      <audio id="my-audio" controls>
+        <source src="sons/CARLO.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </body>
+</html>
