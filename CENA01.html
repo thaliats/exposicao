@@ -50,14 +50,26 @@ audio {
   top: 15%;
   left: 10%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+
 }
 .question {
   color: rgb(255, 255, 255);
   font-size: 14px;
-  text-align: center;
-
+  text-align:right;
+font-family: monospace;
+}
+.overlay2{
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  display: flex;
+  z-index: -1;
+}
+.question2 {
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  text-align: right;
+font-weight: bolder;
 font-family: monospace;
 }
 
@@ -75,17 +87,17 @@ font-family: monospace;
     </style>
   </head>
   <body>
-    <div class="overlay">
-      <p class="question">Você pode clicar em algumas partes<br>da obra se quiser saber mais</p>
-    </div>
-	  <div class="overlay">
-      <p class="question">Pintura: O Flagelo de Lucas da Feira
+    <div class="overlay2">
+      <p class="question2">Pintura: O Flagelo de Lucas da Feira
 		  <br>
 		  Autor: Carlo Barbosa
 		  <br>
 		  Feita em 1987
 		  <br>
 		  Medidas: 240 x 150cm </p>
+    </div>
+    <div class="overlay">
+      <p class="question">Você pode clicar em algumas partes<br>da obra se quiser saber mais</p>
     </div>
     <div class="container">
       <div class="button" id="button1" onclick="window.location.href='Button01.html'"></div>
@@ -111,4 +123,3 @@ font-family: monospace;
 </div>
 </body>
 </html>
-
