@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>fogo</title>
+    <style>
+      body {
+        margin: 0;
+		padding: 0;
+        background-color: rgb(0, 0, 0);
+      }
+      .container {
+  position: relative;
+  width: 1000px;
+  height: 500px; /* Altura igual à altura da imagem */
+  margin: 0 auto;
+}
+
+.container img {
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 300%;
+  z-index: -1;
+}
+.button {
+  background-color: transparent;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 50%; /* Centraliza verticalmente */
+  left: 70%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%);
+  opacity: 100%;
+  cursor: pointer;
+}
+.overlay{
+  position: absolute;
+  top: 900px;
+  left: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.question {
+  color: rgb(27, 14, 14);
+  font-size: 24px;
+  text-align: center;
+
+font-family: monospace;
+}
+      /* Posições dos botões */
+      #button1 { top: 650px; left: 10px; }
+      #button2 { top: 1050px; left: 1030px; }
+
+    </style>
+  </head>
+  <body>
+    <audio autoplay>
+      <source src="sons/fogo.mp3" type="audio/mpeg">
+    </audio>
+    <div class="overlay">
+      <p class="question">De quem é esse retrato?</p>
+    </div>
+    <div class="container">
+    <div class="button" id="button1" onclick="window.location.href='CENA01.html'"></div>
+    <div class="button" id="button2" onclick="window.location.href='Button03.html'"></div>
+    <img src="img/ZOOM/01.jpg" alt="Minha imagem">
+</div>
+</body>
+</html>
+
